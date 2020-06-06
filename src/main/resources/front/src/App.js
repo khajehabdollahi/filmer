@@ -4,22 +4,19 @@ import "./App.css";
 import Navbar from "./component/Navbar.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./component/Footer.js";
-import Attractions from "./component/Attractions.js";
 import FilmList from "./component/FilmList.js";
-
-
-
-
+import FilmContextProvider from "./contexts/FilmContextProvider.js";
 
 function App() {
   return (
     <div className="App">
-      <Router>
-        <Navbar />
-        {/* <Attractions/> */}
-        <Route exact path="/" component={FilmList} />
-        <Footer />
-      </Router>
+      <FilmContextProvider>
+        <Router>
+          <Navbar />
+          <Route exact path="/" component={FilmList} />
+          <Footer />
+        </Router>
+      </FilmContextProvider>
     </div>
   );
 }
