@@ -3,11 +3,13 @@ import { Container, Row, Col } from 'reactstrap';
 
 export default function FilmList() {
   return (
-    <div>
-      Film LIst
-       Persian palace,
-      Persian,
-      Iran,
-    </div>
+    <Container>
+      <Row style={{display:"flex", justifyContent:"center"}}>
+      <h1> Film LIst</h1>  
+         </Row>
+        Persian palace,
+        Persian,
+        Iran,
+    </Container>
   )
 }
