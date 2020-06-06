@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Attractions/>
+        {/* <Attractions/> */}
         <Route exact path="/" component={FilmList} />
         <Footer />
       </Router>
