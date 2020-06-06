@@ -9,19 +9,15 @@ const Footer = () => {
         <Row className="font-small indigo ">
           <Col sm="12" md="3" className="mb-3">
             <h6 className="text-uppercase font-weight-bold text-center">
-              <Link to="/">Accomodation</Link>
+              <Link to="/">Instagram</Link>
             </h6>
           </Col>
           <Col sm="12" md="3" className="mb-3">
             <h6 className="text-uppercase font-weight-bold text-center">
-              <Link to="/about">Trvel Agencies</Link>
+              <Link to="/about">Tweeter</Link>
             </h6>
           </Col>
-          <Col sm="12" md="3" className="mb-3">
-            <h6 className="text-uppercase font-weight-bold text-center">
-              <Link to="/user-login">Logga in</Link>
-            </h6>
-          </Col>
+         
           <Col sm="12" md="3" className="mb-3 ">
             <h6 className="text-uppercase font-weight-bold text-center text-info">
               <Link to="/user-register">Facebook</Link>
@@ -39,7 +35,7 @@ const Footer = () => {
         />
       </Container>
       <Row className="text-center py-3 bg-info text-white mt-3">
-        <Col md="12">© 2020 Clear BnB</Col>
+        <Col md="12">© 2020 Hassan</Col>
       </Row>
     </Container>
   );

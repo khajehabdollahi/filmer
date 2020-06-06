@@ -18,4 +18,9 @@ public class FilmController {
         return filmService.getAllFilms();
     }
 
+    @GetMapping("/rest/films/{id}")
+    public Film getOneRecipe(@PathVariable int id) {
+        return filmService.getOneFilm(id);
+    }
+
 }
