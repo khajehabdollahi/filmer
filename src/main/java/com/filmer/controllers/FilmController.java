@@ -23,4 +23,9 @@ public class FilmController {
         return filmService.getOneFilm(id);
     }
 
+    @PostMapping("/rest/films")
+    public Film createFilm(@RequestBody Film film) {
+        return filmService.createFilm(film);
+    }
+
 }

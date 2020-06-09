@@ -21,4 +21,8 @@ public class FilmService {
         return filmRepo.findById(id);
     }
 
+    public Film createFilm(Film film) {
+        return filmRepo.save(film);
+    }
+
 }

@@ -10,12 +10,26 @@ public class Film {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "film_name")
     private String film_name;
+
+    @Column(name = "language")
     private String language;
+
+    @Column(name = "duration")
     private Integer duration;
+
+    @Column(name = "film_type")
     private String film_type;
 
     public Film() {}
+
+    public Film(String film_name, String language, Integer duration, String film_type) {
+        this.film_name = film_name;
+        this.language = language;
+        this.duration = duration;
+        this.film_type = film_type;
+    }
 
     public int getId() {
         return id;

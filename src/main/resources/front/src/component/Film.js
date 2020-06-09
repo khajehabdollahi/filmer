@@ -17,8 +17,7 @@ export default function Film() {
 
   return (
     <div>
-      <h3>THis is One Film Page</h3>
-      {film.film_name}
+      <h1>{film.film_name}</h1>
     </div>
   );
 }
