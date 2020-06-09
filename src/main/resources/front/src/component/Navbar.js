@@ -21,12 +21,12 @@ const TopNavbar = (props) => {
 
   return (
     <div>
-      <Navbar  expand="md" style={{display:"flex", justifyContent:"center",height:"50px"}}>
+      <Navbar  expand="md" >
         <NavbarBrand href="/">Iran Attractions</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
         
-            <Nav className="mr-auto" navbar >
+            <Nav  style={{display:"flex", justifyContent:"spacearound",height:"50px"}} className="mr-auto" navbar >
               <NavItem>
                 <NavLink href="/components/">About us</NavLink>
               </NavItem>

@@ -17,7 +17,11 @@ const Footer = () => {
               <Link to="/about">Tweeter</Link>
             </h6>
           </Col>
-         
+          <Col sm="12" md="3" className="mb-3">
+            <h6 className="text-uppercase font-weight-bold text-center">
+              <Link to="/user-login">Logga in</Link>
+            </h6>
+          </Col>
           <Col sm="12" md="3" className="mb-3 ">
             <h6 className="text-uppercase font-weight-bold text-center text-info">
               <Link to="/user-register">Facebook</Link>
