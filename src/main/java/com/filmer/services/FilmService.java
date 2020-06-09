@@ -25,4 +25,8 @@ public class FilmService {
         return filmRepo.save(film);
     }
 
+    public void deleteFilm(int id) {
+        filmRepo.deleteById(id);
+    }
+
 }

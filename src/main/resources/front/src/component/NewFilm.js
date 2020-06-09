@@ -32,19 +32,20 @@ export default function NewFilm(props) {
 
   return (
     <Container>
+      <div className="mx-5 px-5">
       <h1>ADD NEW FILM</h1>
-      <Form onSubmit={addFilm}>
+      <Form onSubmit={addFilm} className="my-5 p-5">
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
           <Label for="filmName" className="mr-sm-2">Film Name</Label>
           <Input type="text" name="film-name" id="filmName" placeholder="Film Name" onChange={e=>setFilmName(e.target.value)}/>
         </FormGroup>
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-          <Label for="filmType" className="mr-sm-2">Film Type</Label>
+          <Label for="filmType" className="mr-sm-2">Language</Label>
           <Input type="text" name="language" id="filmType" placeholder="Language"  onChange={e=>setLanguage(e.target.value)}/>
         </FormGroup>
 
         <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-          <Label for="filmType" className="mr-sm-2">Film Type</Label>
+          <Label for="filmType" className="mr-sm-2">Duration</Label>
           <Input type="text" name="duration" id="filmType" placeholder="Duration"  onChange={e=>setDuration(e.target.value)} />
         </FormGroup>
 
@@ -53,7 +54,8 @@ export default function NewFilm(props) {
           <Input type="text" name="film-type" id="filmType" placeholder="Film Type"  onChange={e=>setFilmType(e.target.value)}/>
         </FormGroup>
         <Button>Submit</Button>
-      </Form>
+        </Form>
+      </div>
     </Container>
   )
 

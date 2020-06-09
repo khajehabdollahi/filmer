@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import { Button } from "reactstrap";
 
 export default function Film() {
   let { id } = useParams();
@@ -18,6 +19,8 @@ export default function Film() {
   return (
     <div>
       <h1>{film.film_name}</h1>
+
+      <Button>DELETE</Button>
     </div>
   );
 }
