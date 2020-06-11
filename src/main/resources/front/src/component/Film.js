@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link, Redirect } from "react-router-dom";
-import { Button } from "reactstrap";
+import { Button,Card } from "reactstrap";
 import {FilmContext} from '../contexts/FilmContextProvider'
 
 export default function Film(props) {
@@ -21,8 +21,8 @@ export default function Film(props) {
   return (
     <div>
       <h1>{film.film_name}</h1>
-
-      <Button onClick={() => deleteFilm(id)}>DELETE</Button>
+      <h4 style={{backgroundColor:"blue" }}>Do you want to delete this movie</h4>
+      <Button style={{color:"yellow", backgroundColor:"red"}} onClick={() => deleteFilm(id)}>DELETE</Button>
     </div>
   );
 }

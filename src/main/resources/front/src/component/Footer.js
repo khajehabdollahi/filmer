@@ -41,6 +41,7 @@ const Footer = () => {
       <Row className="text-center py-3 bg-info text-white mt-3">
         <Col md="12">© 2020 Hassan</Col>
       </Row>
+      
     </Container>
   );
 };
