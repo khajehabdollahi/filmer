@@ -4,7 +4,8 @@ import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Container
 } from 'reactstrap';
-import {FilmContext} from '../contexts/FilmContextProvider'
+import { FilmContext } from '../contexts/FilmContextProvider'
+import moment from "moment";
 
 export default function Film(props) {
   const { deleteFilm } = useContext(FilmContext)
@@ -30,12 +31,12 @@ export default function Film(props) {
   return (
     <div className="mt-5 p-5 bg-light">
       {redirect??<Redirect to='/'/>}
-      <Card>
-        <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" />
+      <Card className="film-card mx-auto">
+        <CardImg top width="100%" src={film.film_image} alt="hassan" />
         <CardBody>
           <CardTitle><h1 className="text-info">{film.film_name}</h1></CardTitle>
           <CardSubtitle><h4>{film.film_type}</h4></CardSubtitle>
-          <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+          <CardText>{moment(film.publish_date).format('llll')}</CardText>
           <Button className="btn btn-danger mt-5" onClick={() => removeMovie()}>DELETE</Button>
         </CardBody>
       </Card>
