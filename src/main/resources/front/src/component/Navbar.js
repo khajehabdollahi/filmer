@@ -28,16 +28,16 @@ const TopNavbar = (props) => {
         
             <Nav  style={{display:"flex", justifyContent:"spacearound",height:"50px"}} className="mr-auto" navbar >
               <NavItem>
-                <NavLink href="/components/">About us</NavLink>
+                <NavLink href="/contact/">Contact Us</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="">Contact Us</NavLink>
+                <NavLink href="/about">About us</NavLink>
             </NavItem>
             <NavItem>
-                <NavLink href="">Log in </NavLink>
+                <NavLink href="/new">Add films</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="">Create Account</NavLink>
+                <NavLink href=""></NavLink>
               </NavItem>
             </Nav>
        

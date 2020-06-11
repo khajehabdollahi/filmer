@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { Container, Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import {FilmContext} from '../contexts/FilmContextProvider'
 
 export default function NewFilm(props) {
+  const {updateMovieList} = useContext(FilmContext)
   const [filmName, setFilmName] = useState('');
   const [language, setLanguage] = useState('');
   const [duration, setDuration] = useState('');
@@ -24,6 +26,7 @@ export default function NewFilm(props) {
       body: JSON.stringify(film)
     })
     res = await res.json()
+    updateMovieList(res)
 
     props.history.push('/')
   }

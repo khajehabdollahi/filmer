@@ -8,6 +8,8 @@ import FilmList from "./component/FilmList.js";
 import FilmContextProvider from "./contexts/FilmContextProvider.js";
 import Film from "./component/Film.js";
 import NewFilm from "./component/NewFilm.js";
+import About from "./component/About.js";
+import Contact from "./component/Contact.js";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
 
           <Route exact path="/new" component={NewFilm} />
           <Route exact path="/:id" children={<Film />} />
+          <Route exact path="/about" children={<About />} />
+          <Route exact path="/contact" children={<Contact />}/>
           <Footer />
         </Router>
       </FilmContextProvider>

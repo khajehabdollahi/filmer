@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { useParams, Link, Redirect } from "react-router-dom";
 import { Button } from "reactstrap";
+import {FilmContext} from '../contexts/FilmContextProvider'
 
-export default function Film() {
+export default function Film(props) {
+  const { deleteFilm } = useContext(FilmContext)
   let { id } = useParams();
   const [film, setFilm] = useState("");
 
@@ -20,7 +22,7 @@ export default function Film() {
     <div>
       <h1>{film.film_name}</h1>
 
-      <Button>DELETE</Button>
+      <Button onClick={() => deleteFilm(id)}>DELETE</Button>
     </div>
   );
 }
