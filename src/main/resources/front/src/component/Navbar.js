@@ -1,50 +1,29 @@
-import React, { useState } from "react";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  NavbarText,
-} from "reactstrap";
+import React, { useState } from 'react';
+import { Collapse, Navbar, NavbarToggler, Nav, NavItem, Form } from 'reactstrap';
+import { Link } from "react-router-dom";
 
-const TopNavbar = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+const NavMenu = (props) => {
 
-  const toggle = () => setIsOpen(!isOpen);
+  const [collapsed, setCollapsed] = useState(true);
+  const toggleNavbar = () => setCollapsed(!collapsed);
 
   return (
-    <div>
-      <Navbar  expand="md" >
-        <NavbarBrand href="/">Iran Attractions</NavbarBrand>
-        <NavbarToggler onClick={toggle} />
-        <Collapse isOpen={isOpen} navbar>
-        
-            <Nav  style={{display:"flex", justifyContent:"spacearound",height:"50px"}} className="mr-auto" navbar >
-              <NavItem>
-                <NavLink href="/contact/">Contact Us</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/about">About us</NavLink>
-            </NavItem>
-            <NavItem>
-                <NavLink href="/new">Add films</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href=""></NavLink>
-              </NavItem>
-            </Nav>
-       
-        </Collapse>
+    <Navbar color="faded" light className="container" expand="md">
+      <Link to="/" className="mr-auto navbar-brand text-info"><h3>MOVIES</h3></Link>
+      <NavbarToggler onClick={toggleNavbar} className="mr-0" />
+      <Collapse isOpen={!collapsed} navbar>
+        <Nav navbar className="text-right ml-auto">
+          <NavItem>
+            <Link to="/new/" className="nav-link text-info h5">ADD NEW MOVIE</Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/about/" className="nav-link text-info h5">ABOUT</Link>
+          </NavItem>
+          
+        </Nav>
+      </Collapse>
       </Navbar>
-    </div>
-  );
-};
+  )
+}
 
-export default TopNavbar;
+export default NavMenu;

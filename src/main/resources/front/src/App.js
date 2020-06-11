@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./component/Navbar.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Footer from "./component/Footer.js";
@@ -15,15 +14,16 @@ function App() {
   return (
     <div className="App">
       <FilmContextProvider>
-        <Router>
-          <Navbar />
-          <Route exact path="/" component={FilmList} />
-
-          <Route exact path="/new" component={NewFilm} />
-          <Route exact path="/:id" children={<Film />} />
-          <Route exact path="/about" children={<About />} />
-          <Route exact path="/contact" children={<Contact />}/>
-          <Footer />
+        <Router>   
+   
+            <Navbar />
+            <Route exact path="/" component={FilmList} />
+            <Route path="/new" component={NewFilm} />          
+            <Route path="/about" component={About} />
+            <Route path="/contact" component={Contact} />
+            <Route path="/:id" component={Film} />
+            <Footer />
+    
         </Router>
       </FilmContextProvider>
     </div>
