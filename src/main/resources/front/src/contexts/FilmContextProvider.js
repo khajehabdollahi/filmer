@@ -22,7 +22,6 @@ export default function FilmContextProvider(props) {
     fetch('/rest/films/' + id, {
       method: 'DELETE'
     })
-    props.history.push('/')
   }
 
   useEffect(() => {

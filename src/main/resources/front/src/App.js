@@ -14,16 +14,18 @@ function App() {
   return (
     <div className="App">
       <FilmContextProvider>
-        <Router>   
-   
-            <Navbar />
+        <Router>  
+          <Navbar />
+          <div className="content">
+            <Switch>
             <Route exact path="/" component={FilmList} />
             <Route path="/new" component={NewFilm} />          
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/:id" component={Film} />
-            <Footer />
-    
+            </Switch>
+          </div>
+          <Footer />    
         </Router>
       </FilmContextProvider>
     </div>

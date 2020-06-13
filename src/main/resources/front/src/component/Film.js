@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams, Link, Redirect } from "react-router-dom";
+import { useParams, Link, Redirect, withRouter } from "react-router-dom";
 import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, Container
@@ -7,9 +7,8 @@ import {
 import { FilmContext } from '../contexts/FilmContextProvider'
 import moment from "moment";
 
-export default function Film(props) {
+function Film(props) {
   const { deleteFilm } = useContext(FilmContext)
-  const [redirect, setRedirect] = useState(false)
   let { id } = useParams();
   const [film, setFilm] = useState("");
 
@@ -21,7 +20,7 @@ export default function Film(props) {
 
   function removeMovie() {
     deleteFilm(id)
-    setRedirect(true)
+    props.history.push('/')
   }
 
   useEffect(() => {
@@ -30,7 +29,6 @@ export default function Film(props) {
 
   return (
     <div className="mt-5 p-5 bg-light">
-      {redirect??<Redirect to='/'/>}
       <Card className="film-card mx-auto">
         <CardImg top width="100%" src={film.film_image} alt="hassan" />
         <CardBody>
@@ -44,3 +42,5 @@ export default function Film(props) {
     </div>
   );
 }
+
+export default withRouter(Film)

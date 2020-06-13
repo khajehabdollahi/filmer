@@ -14,10 +14,10 @@ const NavMenu = (props) => {
       <Collapse isOpen={!collapsed} navbar>
         <Nav navbar className="text-right ml-auto">
           <NavItem>
-            <Link to="/new/" className="nav-link text-info h5">ADD NEW MOVIE</Link>
+            <Link to="/new" className="nav-link text-info h5">ADD NEW MOVIE</Link>
           </NavItem>
           <NavItem>
-            <Link to="/about/" className="nav-link text-info h5">ABOUT</Link>
+            <Link to="/about" className="nav-link text-info h5">ABOUT</Link>
           </NavItem>
           
         </Nav>

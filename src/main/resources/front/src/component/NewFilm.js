@@ -18,7 +18,8 @@ export default function NewFilm(props) {
       language: language,
       duration: +duration,
       film_type: filmType,
-      film_image: filmImage
+      film_image: filmImage,
+      publish_date: Date.now()
     };
 
     // send new film to backend

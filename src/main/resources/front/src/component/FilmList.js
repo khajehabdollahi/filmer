@@ -1,36 +1,39 @@
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom';
-import { Card, CardTitle, CardText, Container, Row, Col } from 'reactstrap';
+import {Container, Col, Row,
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle
+} from 'reactstrap';
 import { FilmContext } from '../contexts/FilmContextProvider'
+import moment from "moment";
 
-export default function FilmList() {
+export default function FilmList(props) {
   const { movies} = useContext(FilmContext)
 
   const list = () => {
     return movies.map((movie, i) => {
-      return (
-        <Container>
-          <Row>              
-            <Col style={{ color: "red", width: "30%", backgroundColor: "yellow", border: "5px blue solid" }} key={i}> 
-              <Link to={`/${movie.id}`}>
-                <Card>
-                  <h1 style={{color:"black"}}>Film Name: {movie.film_name}</h1>
-                  <h4><span style={{color:"black"}}>Film Type: </span>{movie.film_type}</h4>
-                  <h5><span style={{color:"black"}}>Lanuage: </span>{movie.language}</h5>
-                  <h5><span style={{ color: "black" }}>Duration: </span>{movie.duration}</h5>
-                </Card>
-              </Link>
-            </Col>               
-          </Row>
-        </Container>
-          
+      return (                   
+        <Col key={i} className="my-3"> 
+          <Link to={`/${movie.id}`} style={{textDecoration: 'none'}}>
+          <Card className="mx-auto">
+            <CardImg top width="100%" src={movie.film_image} alt="hassan" style={{height:'14rem'}} />
+            <CardBody>
+              <CardTitle><h3 className="text-info">{movie.film_name}</h3></CardTitle>
+              <CardSubtitle><h5>{movie.film_type}</h5></CardSubtitle>
+              <CardText>Publish Date: {moment(movie.publish_date).format('llll')}</CardText>
+            </CardBody>
+          </Card>
+          </Link>
+        </Col>               
       )
     })
   }
 
   return (
-    <>
-      {list()}
-    </>
+    <Container>
+      <Row xs="1" sm="2" md="3">  
+        {list()}
+      </Row>
+    </Container>
   )
 }
