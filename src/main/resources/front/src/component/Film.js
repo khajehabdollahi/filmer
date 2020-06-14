@@ -35,6 +35,7 @@ function Film(props) {
           <CardTitle><h1 className="text-info">{film.film_name}</h1></CardTitle>
           <CardSubtitle><h4>{film.film_type}</h4></CardSubtitle>
           <CardText>{moment(film.publish_date).format('llll')}</CardText>
+          
           <Button className="btn btn-danger mt-5" onClick={() => removeMovie()}>DELETE</Button>
         </CardBody>
       </Card>

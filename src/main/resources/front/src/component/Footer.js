@@ -7,14 +7,10 @@ const Footer = () => {
     <Container fluid className="bg-light border-top border-info mt-5">
       <Container className="mt-5 mb-3 sticky-footer">
         <Row className="font-small indigo ">
+          
           <Col sm="12" md="3" className="mb-3">
             <h6 className="text-uppercase font-weight-bold text-center">
-              <Link to="/">Instagram</Link>
-            </h6>
-          </Col>
-          <Col sm="12" md="3" className="mb-3">
-            <h6 className="text-uppercase font-weight-bold text-center">
-              <Link to="/about">Tweeter</Link>
+              <a href="https://www.youtube.com/user/khajehabdollahi">Youtube</a>
             </h6>
           </Col>
           <Col sm="12" md="3" className="mb-3">
@@ -26,7 +22,8 @@ const Footer = () => {
           </Col>
           <Col sm="12" md="3" className="mb-3 ">
             <h6 className="text-uppercase font-weight-bold text-center text-info">
-              <Link to="/user-register">Facebook</Link>
+               <a href="https://www.facebook.com/hassankhajehabdollahi"> Facebook</a>
+              
             </h6>
           </Col>
         </Row>

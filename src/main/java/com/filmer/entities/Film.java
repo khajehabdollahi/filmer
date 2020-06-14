@@ -94,4 +94,5 @@ public class Film {
     public void setPublish_date(Long publish_date) {
         this.publish_date = publish_date;
     }
+
 }
